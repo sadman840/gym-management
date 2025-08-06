@@ -1,0 +1,100 @@
+
+
+.App{
+    
+    padding-top: 10%;
+    
+}
+.login-form {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  padding: 40px 60px 30px;
+  border-radius: 16px;
+  color: white;
+  max-width: 360px;
+  margin: 40px auto;
+  box-shadow: 0 12px 30px rgba(102, 126, 234, 0.5);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-form h2 {
+  margin-bottom: 24px;
+  font-weight: 700;
+  font-size: 2rem;
+  text-align: center;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.login-form input {
+  width: 90%;
+  padding: 14px 16px 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.login-form input:focus {
+  outline: none;
+  box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+.login-form button {
+  width: 100%;
+  padding: 14px 0;
+  border: none;
+  border-radius: 10px;
+  background-color: #f6ad55; /* orange */
+  color: #3a1a00;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+  background-color: #dd6b20;
+}
+
+.login-form p {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+.login-form .link-button {
+  background: none;
+  border: none;
+  color: #ffe3b3;
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.login-form .link-button:hover {
+  color: #f6ad55;
+}
+.logout-button {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #f6ad55, #dd6b20);
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.logout-button:hover {
+  background: linear-gradient(135deg, #dd6b20, #c05621);
+  transform: scale(1.03);
+}

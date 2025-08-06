@@ -1,0 +1,103 @@
+
+body {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(to right, #f0f2f5, #d6e4f0);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+
+.form {
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.form h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+
+.form input,
+.form select {
+  margin-bottom: 16px;
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: 0.2s border;
+}
+
+.form input:focus,
+.form select:focus {
+  outline: none;
+  border: 1px solid #5c67f2;
+}
+
+
+button {
+  padding: 12px;
+  background-color: #5c67f2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #3f49d4;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: #5c67f2;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+.link-button:hover {
+  color: #3f49d4;
+}
+
+
+.dashboard {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 500px;
+}
+
+.dashboard h2 {
+  margin-bottom: 12px;
+  color: #2c3e50;
+}
+
+.dashboard p {
+  font-size: 1rem;
+  color: #555;
+}

@@ -1,0 +1,48 @@
+.dashboard {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  min-width: 320px;
+  margin: 50px auto;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+
+.dashboard h2 {
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.dashboard p {
+  font-size: 1rem;
+  margin-top: 10px;
+  color: #555;
+}
+
+.admin-tools {
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 12px;
+  background: #f5f6ff;
+  box-shadow: inset 0 0 10px rgba(92, 103, 242, 0.1);
+}
+
+.admin-tools h3 {
+  color: #5c67f2;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+.admin-tools ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.admin-tools li {
+  padding: 10px 0;
+  font-weight: 500;
+  font-size: 1rem;
+}
