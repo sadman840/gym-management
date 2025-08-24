@@ -78,3 +78,71 @@
   cursor: not-allowed;
   box-shadow: none;
 }
+.cancel-button {
+  margin-top: 10px;
+  padding: 10px 16px;
+  background: #e53e3e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.cancel-button:hover {
+  background: #c53030;
+}
+
+.booking-button {
+  margin-top: 10px;
+  padding: 12px 20px;
+  background: #f6ad55;
+  color: #3a1a00;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.booking-button:hover {
+  background: #dd6b20;
+}
+.logout-button {
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.logout-button:hover {
+  background-color: #ff7875;
+}
+/* MemberProfile.css */
+.slot-selection ul {
+  list-style: none;
+  padding: 0;
+}
+
+.slot-selection li {
+  padding: 10px;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  background: rgba(102, 126, 234, 0.15);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.slot-selection li:hover {
+  background: rgba(102, 126, 234, 0.35);
+}
+
+.slot-selection li.selected {
+  background: #667eea;
+  color: white;
+  font-weight: 700;
+}

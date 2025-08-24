@@ -18,12 +18,9 @@ const Login = ({ setUser }) => {
       if (userDoc.exists()) {
         const role = userDoc.data().role;
         setUser({ email, role });
-
-        if (role === "Admin") {
-          navigate("/admin");
-        } else if (role === "Member") {
-          navigate("/profile");
-        } else {
+        if (role === "Admin") navigate("/admin");
+else if (role === "Member") navigate("/profile");
+else if (role === "Trainer") navigate("/trainer"); else {
           navigate("/dashboard");
         }
       } else {
@@ -32,6 +29,10 @@ const Login = ({ setUser }) => {
     } catch (err) {
       alert("Login failed: " + err.message);
     }
+  };
+
+  const handleRegisterRedirect = () => {
+    navigate("/register");
   };
 
   return (
@@ -53,6 +54,13 @@ const Login = ({ setUser }) => {
       />
       <button type="submit">Login</button>
       
+      <div className="auth-link">
+        <p>Don't have an account? 
+          <span onClick={handleRegisterRedirect} className="link-text">
+            Register
+          </span>
+        </p>
+      </div>
     </form>
   );
 };

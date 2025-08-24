@@ -1,0 +1,90 @@
+/* TrainerPage.css */
+.trainer-page {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(102, 126, 234, 0.5);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.trainer-page h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #ffe3b3;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.message {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #f6ad55;
+  font-weight: bold;
+}
+
+.logout-button {
+  padding: 12px 24px;
+  background: #f6ad55;
+  color: #3a1a00;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background 0.3s;
+}
+.logout-button:hover {
+  background: #dd6b20;
+}
+
+.profile-section {
+  margin-bottom: 20px;
+}
+
+.profile-section label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #ffe3b3;
+}
+
+.profile-section input {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255 255 255 / 0.15);
+  color: white;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.profile-section button {
+  padding: 12px 24px;
+  background: #f6ad55;
+  color: #3a1a00;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.profile-section button:hover {
+  background: #dd6b20;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  background: rgba(255, 255, 255, 0.15);
+  margin-bottom: 8px;
+  padding: 10px;
+  border-radius: 8px;
+}

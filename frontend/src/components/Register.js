@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { auth, db } from "../firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
 import "./Register.css";
 
 const Register = () => {
@@ -9,14 +10,12 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("Member");
+  const navigate = useNavigate();
 
   const handleRegister = async (e) => {
     e.preventDefault();
-
     try {
-
       const userCred = await createUserWithEmailAndPassword(auth, email, password);
-
      
       await setDoc(doc(db, "users", userCred.user.uid), {
         name,
@@ -24,12 +23,16 @@ const Register = () => {
         role,
         paymentStatus: "Unpaid",
       });
-
       alert("User registered successfully");
+      navigate("/login"); // Redirect to login page
     } catch (err) {
       console.error("Registration error:", err);
       alert(err.message);
     }
+  };
+
+  const handleLoginRedirect = () => {
+    navigate("/login");
   };
 
   return (
@@ -63,6 +66,14 @@ const Register = () => {
         <option value="Staff">Staff</option>
       </select>
       <button type="submit">Register</button>
+      
+      <div className="auth-link">
+        <p>Already have an account? 
+          <span onClick={handleLoginRedirect} className="link-text">
+            Sign in
+          </span>
+        </p>
+      </div>
     </form>
   );
 };

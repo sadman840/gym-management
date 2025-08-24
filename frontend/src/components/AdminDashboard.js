@@ -13,6 +13,7 @@ const AdminDashboard = () => {
   const [updatingUserId, setUpdatingUserId] = useState(null);
   const [message, setMessage] = useState(null);
   const [authUser, setAuthUser] = useState(null);
+  const [attendanceLogs, setAttendanceLogs] = useState([]);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -44,7 +45,13 @@ const AdminDashboard = () => {
     };
     fetchUsers();
   }, []);
+  const fetchAttendanceLogs = async () => {
+    const querySnapshot = await getDocs(collection(db, "attendance"));
+    const logs = querySnapshot.docs.map(doc => doc.data());
+    setAttendanceLogs(logs);
+  };
 
+  fetchAttendanceLogs();
   const handleRoleChange = async (userId, newRole) => {
     setUpdatingUserId(userId);
     setMessage(null);
@@ -119,6 +126,27 @@ const AdminDashboard = () => {
             ))}
           </tbody>
         </table>
+        <h3>Attendance Logs</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Date</th>
+      <th>Check-In</th>
+      <th>Check-Out</th>
+    </tr>
+  </thead>
+  <tbody>
+    {attendanceLogs.map((log, i) => (
+      <tr key={i}>
+        <td>{log.name}</td>
+        <td>{log.date}</td>
+        <td>{log.checkIn?.toDate ? log.checkIn.toDate().toLocaleTimeString() : "-"}</td>
+        <td>{log.checkOut?.toDate ? log.checkOut.toDate().toLocaleTimeString() : "-"}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>
         </div>
       )}
     </div>
