@@ -37,7 +37,7 @@ const TrainerPage = () => {
           console.error('Error fetching trainer details:', err);
         }
 
-        // Fetch members
+     
         try {
           const querySnapshot = await getDocs(collection(db, 'users'));
           const memberList = querySnapshot.docs
