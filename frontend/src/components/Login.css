@@ -1,5 +1,3 @@
-
-
 .App{
     
     padding-top: 10%;
@@ -77,6 +75,20 @@
 .login-form .link-button:hover {
   color: #f6ad55;
 }
+
+.login-form .link-text {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffdd57;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: text-shadow 0.3s ease;
+}
+
+.login-form .link-text:hover {
+  text-shadow: 0 0 8px #ffdd57, 0 0 12px #ffdd57;
+}
+
 .logout-button {
   position: absolute;
   top: 20px;

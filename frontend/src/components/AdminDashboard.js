@@ -14,6 +14,8 @@ const AdminDashboard = () => {
   const [message, setMessage] = useState(null);
   const [authUser, setAuthUser] = useState(null);
   const [attendanceLogs, setAttendanceLogs] = useState([]);
+  const [showEquipment, setShowEquipment] = useState(false);
+  const [equipmentList, setEquipmentList] = useState([]);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -79,6 +81,20 @@ const AdminDashboard = () => {
     }
   };
 
+  const handleEquipmentStatusClick = async () => {
+    setShowEquipment(true);
+    try {
+      const equipmentSnapshot = await getDocs(collection(db, "equipment"));
+      const equipmentData = equipmentSnapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setEquipmentList(equipmentData);
+    } catch (error) {
+      setMessage("Failed to fetch equipment data: " + error.message);
+    }
+  };
+
   if (!authUser) return null;
 
   return (
@@ -88,6 +104,11 @@ const AdminDashboard = () => {
       </button>
       <h2>Admin Dashboard</h2>
       {message && <div className="message">{message}</div>}
+      {authUser && users.find(u => u.email === authUser.email)?.role === "Admin" && (
+        <button className="equipment-button" onClick={handleEquipmentStatusClick}>
+          Equipment Status
+        </button>
+      )}
       {loading ? (
         <p>Loading users...</p>
       ) : (
@@ -147,6 +168,33 @@ const AdminDashboard = () => {
     ))}
   </tbody>
 </table>
+        {showEquipment && (
+          <>
+            <h3>Equipment Status</h3>
+            <table className="equipment-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Condition</th>
+                  <th>Availability</th>
+                  <th>Last Serviced</th>
+                  <th>Updated By</th>
+                </tr>
+              </thead>
+              <tbody>
+                {equipmentList.map(equip => (
+                  <tr key={equip.id}>
+                    <td>{equip.name || "-"}</td>
+                    <td>{equip.condition || "-"}</td>
+                    <td>{equip.availability || "-"}</td>
+                    <td>{equip.lastServiced?.toDate ? equip.lastServiced.toDate().toLocaleDateString() : (equip.lastServiced || "-")}</td>
+                    <td>{equip.updatedBy || "-"}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </>
+        )}
         </div>
       )}
     </div>

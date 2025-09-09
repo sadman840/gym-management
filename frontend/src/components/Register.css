@@ -1,5 +1,3 @@
-
-
 .App {
   padding-top: 10%;
 }
@@ -58,6 +56,20 @@
 
 .register-form button:hover {
   background-color: #dd6b20;
+}
+
+.register-form button.submit-button {
+  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  color: white;
+  box-shadow: 0 4px 15px rgba(255, 126, 95, 0.7);
+  font-weight: 700;
+  font-size: 1.2rem;
+  transition: box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.register-form button.submit-button:hover {
+  background: linear-gradient(90deg, #ff9068, #f6b26b);
+  box-shadow: 0 0 20px 5px rgba(255, 126, 95, 0.9);
 }
 
 .register-form p {

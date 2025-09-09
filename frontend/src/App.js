@@ -10,6 +10,7 @@ import Dashboard from "./components/Dashboard";
 import AdminDashboard from "./components/AdminDashboard";
 import MemberProfile from "./components/MemberProfile";
 import TrainerPage from "./components/TrainerPage";
+import EquipmentPage from "./components/EquipmentPage";
 
 import "./App.css";
 
@@ -60,6 +61,7 @@ function App() {
   if (userData?.role === "Admin") defaultRoute = "/admin";
   else if (userData?.role === "Member") defaultRoute = "/profile";
   else if (userData?.role === "Trainer") defaultRoute = "/trainer";
+  else if (userData?.role === "Staff") defaultRoute = "/equipment";
 
   return (
     <Router>
@@ -68,6 +70,9 @@ function App() {
         <Route path="/admin" element={<AdminDashboard user={userData} />} />
         <Route path="/profile" element={<MemberProfile user={userData} />} />
         <Route path="/trainer" element={<TrainerPage user={userData} />} />
+        {userData?.role === "Staff" && (
+          <Route path="/equipment" element={<EquipmentPage user={userData} />} />
+        )}
         <Route path="*" element={<Navigate to={defaultRoute} replace />} />
       </Routes>
     </Router>

@@ -18,11 +18,14 @@ const Login = ({ setUser }) => {
       if (userDoc.exists()) {
         const role = userDoc.data().role;
         setUser({ email, role });
+
+        // ✅ Role-based redirection
         if (role === "Admin") navigate("/admin");
-else if (role === "Member") navigate("/profile");
-else if (role === "Trainer") navigate("/trainer"); else {
-          navigate("/dashboard");
-        }
+        else if (role === "Member") navigate("/profile");
+        else if (role === "Trainer") navigate("/trainer");
+        else if (role === "Staff") navigate("/equipment"); // <-- Staff route
+        else navigate("/dashboard");
+
       } else {
         alert("User data not found.");
       }
@@ -55,7 +58,8 @@ else if (role === "Trainer") navigate("/trainer"); else {
       <button type="submit">Login</button>
       
       <div className="auth-link">
-        <p>Don't have an account? 
+        <p>
+          Don't have an account?{" "}
           <span onClick={handleRegisterRedirect} className="link-text">
             Register
           </span>
